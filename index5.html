@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Profil Murid RPL - SMKN 9 Medan</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#eefaff;
+    color:#40596b;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:10;
+    background:linear-gradient(90deg,#159bd7,#55cfff);
+    padding:16px 6%;
+    box-shadow:0 3px 15px #087db830;
+}
+
+nav b,
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+nav b{
+    font-size:20px;
+}
+
+nav span{
+    float:right;
+}
+
+nav a{
+    margin-left:18px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#dff7ff;
+}
+
+/* ================= SECTION ================= */
+
+section{
+    padding:90px 7%;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+    radial-gradient(circle at top right,#8de3ff,transparent 35%),
+    linear-gradient(135deg,#e9faff,#bceeff,#8edcff);
+}
+
+.hero .text{
+    width:60%;
+}
+
+h1{
+    font-size:48px;
+    color:#087bb4;
+}
+
+h2,
+h3{
+    color:#0785c2;
+}
+
+p{
+    line-height:1.7;
+}
+
+/* ================= BUTTON ================= */
+
+.btn{
+    display:inline-block;
+    background:linear-gradient(90deg,#079bd8,#43c8f5);
+    color:white;
+    padding:12px 22px;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 7px 18px #078dcc35;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#0578ae;
+    transform:translateY(-2px);
+}
+
+/* ================= FOTO HERO ================= */
+
+.hero-icon{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    background:white;
+    margin:auto;
+    padding:7px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 12px 30px #087db830;
+    overflow:hidden;
+}
+
+.hero-icon img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+/* ================= TITLE ================= */
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.title h2{
+    font-size:34px;
+}
+
+/* ================= CARD ================= */
+
+.row{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.col{
+    flex:1;
+    min-width:280px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 8px 25px #087db818;
+    border:1px solid #d3f3ff;
+}
+
+/* ================= PROFILE ================= */
+
+.profile{
+    text-align:center;
+}
+
+.profile-icon{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background:#bceeff;
+    margin:auto;
+    padding:5px;
+    overflow:hidden;
+    box-shadow:0 8px 20px #087db825;
+}
+
+.profile-icon img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+.profile h2{
+    margin-bottom:5px;
+}
+
+/* ================= DATA ================= */
+
+.data{
+    padding:12px 0;
+    border-bottom:1px solid #dff4fb;
+}
+
+.data b{
+    color:#0785c2;
+}
+
+/* ================= SKILL ================= */
+
+.skill{
+    margin:18px 0;
+}
+
+.skilltop{
+    display:flex;
+    justify-content:space-between;
+    font-weight:bold;
+    color:#36718d;
+}
+
+.bar{
+    height:10px;
+    background:#dff5fc;
+    border-radius:20px;
+}
+
+.fill{
+    height:100%;
+    background:linear-gradient(90deg,#72d9ff,#078fc9);
+    border-radius:20px;
+}
+
+/* ================= TENTANG DIRIKU ================= */
+
+.tentang{
+    margin-top:25px;
+}
+
+.tentang p{
+    text-align:justify;
+}
+
+.highlight{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:25px;
+}
+
+.highlight div{
+    background:#e9faff;
+    border-radius:18px;
+    padding:20px;
+    text-align:center;
+}
+
+.highlight span{
+    display:block;
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.highlight b{
+    color:#0785c2;
+}
+
+/* ================= FOTO SEKOLAH ================= */
+
+.sekolah{
+    background:linear-gradient(180deg,#f6fdff,#dff7ff);
+}
+
+.school-photo{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:25px;
+    display:block;
+    box-shadow:0 10px 30px #087db825;
+}
+
+.school-info{
+    text-align:center;
+    margin-top:25px;
+}
+
+/* ================= JURUSAN ================= */
+
+.jurusan{
+    background:#f4fcff;
+}
+
+.tabs{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.tabs button{
+    border:0;
+    background:#dff5fc;
+    color:#0785c2;
+    padding:11px 17px;
+    margin:5px;
+    border-radius:22px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.tabs button.active,
+.tabs button:hover{
+    background:linear-gradient(90deg,#079bd8,#45c9f5);
+    color:white;
+}
+
+.jcard{
+    text-align:center;
+}
+
+.jicon{
+    width:100px;
+    height:100px;
+    border-radius:20px;
+    background:#dff6ff;
+    margin:auto;
+    padding:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.jicon img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    border-radius:15px;
+}
+
+.vm{
+    text-align:left;
+    background:#eafaff;
+    border-radius:15px;
+    padding:20px;
+    margin-top:20px;
+}
+
+.vm h4{
+    color:#0785c2;
+    margin-bottom:5px;
+}
+
+/* ================= DENAH ================= */
+
+.map{
+    background:white;
+    padding:12px;
+    border-radius:25px;
+    box-shadow:0 8px 25px #087db818;
+}
+
+.map iframe{
+    width:100%;
+    height:400px;
+    border:0;
+    border-radius:18px;
+}
+
+.route{
+    text-align:center;
+    margin-top:20px;
+}
+
+/* ================= KONTAK ================= */
+
+.contact{
+    text-align:center;
+}
+
+.contact-icon{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#c7efff;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    color:#0785c2;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:linear-gradient(90deg,#0577ad,#0da4df);
+    color:white;
+    text-align:center;
+    padding:28px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:700px){
+
+    nav span{
+        float:none;
+        display:block;
+        margin-top:10px;
+    }
+
+    nav a{
+        margin:0 5px;
+        font-size:12px;
+    }
+
+    .hero{
+        display:block;
+        text-align:center;
+    }
+
+    .hero .text{
+        width:100%;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero-icon{
+        margin-top:35px;
+    }
+
+    .highlight{
+        grid-template-columns:1fr;
+    }
+
+    .school-photo{
+        height:250px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<b>💙 SMKN 9 MEDAN</b>
+
+<span>
+<a href="#home">Beranda</a>
+<a href="#profil">Profil</a>
+<a href="#sekolah">Sekolah</a>
+<a href="#jurusan">Jurusan</a>
+<a href="#denah">Denah</a>
+<a href="#kontak">Kontak</a>
+</span>
+
+</nav>
+
+
+<!-- ================= HOME ================= -->
+
+<section class="hero" id="home">
+
+<div class="text">
+
+<h1>
+Halo, Saya<br>
+Arcelya Syafrina
+</h1>
+
+<h2>Siswa Rekayasa Perangkat Lunak</h2>
+
+<p>
+Selamat datang di website profil saya.
+Saya adalah siswa SMKN 9 Medan dari jurusan
+Rekayasa Perangkat Lunak (RPL).
+Website ini dibuat untuk memperkenalkan
+profil, kemampuan, sekolah, dan jurusan
+yang tersedia di SMKN 9 Medan.
+</p>
+
+<a class="btn" href="#profil">
+Lihat Profil Sekolah
+</a>
+
+</div>
+
+
+<!-- FOTO KAMU -->
+
+<div class="hero-icon">
+
+<img
+src="img/foto-saya.jpg"
+alt="Foto Arcelya Syafrina">
+
+</div>
+
+</section>
+
+
+<!-- ================= PROFIL ================= -->
+
+<section id="profil">
+
+<div class="title">
+
+<h2>Profil Saya</h2>
+
+<p>
+Informasi mengenai data diri dan kemampuan saya.
+</p>
+
+</div>
+
+
+<div class="row">
+
+
+<div class="col">
+
+<div class="card profile">
+
+<div class="profile-icon">
+
+<img
+src="img/foto-saya.jpg"
+alt="Foto Arcelya">
+
+</div>
+
+<h2>Arcelya Syafrina</h2>
+
+<p>
+Siswa<br>
+Rekayasa Perangkat Lunak (RPL)<br>
+SMKN 9 Medan
+</p>
+
+<a class="btn" href="#kontak">
+Hubungi Saya
+</a>
+
+</div>
+
+</div>
+
+
+<div class="col">
+
+<div class="card">
+
+<h2>Data Diri</h2>
+
+<div class="data">
+<b>Nama:</b> Arcelya Syafrina
+</div>
+
+<div class="data">
+<b>Kelas:</b> XI RPL 4
+</div>
+
+<div class="data">
+<b>NIS:</b> Isi NIS Kamu
+</div>
+
+<div class="data">
+<b>Jurusan:</b> Rekayasa Perangkat Lunak
+</div>
+
+<div class="data">
+<b>Sekolah:</b> SMKN 9 Medan
+</div>
+
+<div class="data">
+<b>Alamat:</b> Isi alamat Kamu
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- KEMAMPUAN -->
+
+<div class="card" style="margin-top:25px">
+
+<h2>💻 Kemampuan Saya</h2>
+
+<div class="skill">
+
+<div class="skilltop">
+<span>HTML</span>
+<span>85%</span>
+</div>
+
+<div class="bar">
+<div class="fill" style="width:85%"></div>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skilltop">
+<span>CSS</span>
+<span>80%</span>
+</div>
+
+<div class="bar">
+<div class="fill" style="width:80%"></div>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skilltop">
+<span>JavaScript</span>
+<span>70%</span>
+</div>
+
+<div class="bar">
+<div class="fill" style="width:70%"></div>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skilltop">
+<span>C++</span>
+<span>75%</span>
+</div>
+
+<div class="bar">
+<div class="fill" style="width:75%"></div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- TENTANG DIRIKU -->
+
+<div class="card tentang">
+
+<h2>🌷 Tentang Diriku</h2>
+
+<p>
+Halo! Nama saya <b>Arcelya Syafrina</b>.
+Saya adalah siswa jurusan
+<b>Rekayasa Perangkat Lunak (RPL)</b>
+di <b>SMKN 9 Medan</b>.
+</p>
+
+<p>
+Saya tertarik dengan dunia teknologi, terutama
+dalam membuat website dan aplikasi.
+Selama belajar di jurusan RPL, saya terus
+mengembangkan kemampuan dalam HTML, CSS,
+JavaScript, dan pemrograman.
+</p>
+
+<p>
+Saya senang mencoba membuat berbagai proyek
+digital karena setiap proyek memberikan pengalaman
+baru dan membuat saya semakin kreatif dalam
+memecahkan masalah.
+</p>
+
+<div class="highlight">
+
+<div>
+<span>💻</span>
+<b>Web Development</b>
+</div>
+
+<div>
+<span>📱</span>
+<b>App Development</b>
+</div>
+
+<div>
+<span>🎨</span>
+<b>Kreativitas</b>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SEKOLAH ================= -->
+
+<section class="sekolah" id="sekolah">
+
+<div class="title">
+
+<h2>🏫 SMKN 9 MEDAN</h2>
+
+<p>
+Sekolah tempat saya belajar dan mengembangkan kemampuan.
+</p>
+
+</div>
+
+
+<!-- FOTO SEKOLAH -->
+
+<img
+class="school-photo"
+src="img/foto-sekolah.jpg"
+alt="SMKN 9 Medan">
+
+
+<div class="school-info">
+
+<h3>SMKN 9 Medan</h3>
+
+<p>
+SMKN 9 Medan merupakan tempat saya belajar,
+mengembangkan keterampilan, dan mendapatkan
+pengalaman di bidang Rekayasa Perangkat Lunak.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= JURUSAN ================= -->
+
+<section class="jurusan" id="jurusan">
+
+<div class="title">
+
+<h2>💙 6 Jurusan SMKN 9 Medan</h2>
+
+<p>
+Klik jurusan untuk melihat deskripsi,
+visi, dan misi.
+</p>
+
+</div>
+
+
+<div class="tabs">
+
+<button class="active"
+onclick="show('rpl',this)">
+RPL
+</button>
+
+<button onclick="show('dkv',this)">
+DKV
+</button>
+
+<button onclick="show('peksos',this)">
+PEKSOS
+</button>
+
+<button onclick="show('tkj',this)">
+TKJ
+</button>
+
+<button onclick="show('animasi',this)">
+ANIMASI
+</button>
+
+<button onclick="show('pspt',this)">
+PSPT
+</button>
+
+</div>
+
+
+<div id="box" class="card jcard"></div>
+
+</section>
+
+
+<!-- ================= DENAH ================= -->
+
+<section id="denah">
+
+<div class="title">
+
+<h2>📍 Denah / Lokasi SMKN 9 Medan</h2>
+
+<p>
+Lihat lokasi sekolah melalui Google Maps.
+</p>
+
+</div>
+
+
+<div class="map">
+
+<iframe
+src="https://www.google.com/maps?q=SMKN%209%20Medan&output=embed"
+loading="lazy">
+</iframe>
+
+</div>
+
+
+<div class="route">
+
+<a
+class="btn"
+href="https://www.google.com/maps/search/?api=1&query=SMKN%209%20Medan"
+target="_blank">
+
+🗺️ Buka Google Maps
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================= KONTAK ================= -->
+
+<section class="jurusan" id="kontak">
+
+<div class="title">
+
+<h2>Kontak Saya</h2>
+
+<p>
+Informasi kontak saya.
+</p>
+
+</div>
+
+
+<div class="row">
+
+
+<div class="col">
+
+<div class="card contact">
+
+<div class="contact-icon">
+✉
+</div>
+
+<h3>Email</h3>
+
+<p>
+Isi email kamu
+</p>
+
+</div>
+
+</div>
+
+
+<div class="col">
+
+<div class="card contact">
+
+<div class="contact-icon">
+☎
+</div>
+
+<h3>WhatsApp</h3>
+
+<p>
+08xxxxxxxxxx
+</p>
+
+</div>
+
+</div>
+
+
+<div class="col">
+
+<div class="card contact">
+
+<div class="contact-icon">
+⌖
+</div>
+
+<h3>Sekolah</h3>
+
+<p>
+SMKN 9 Medan
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+© 2026 Website Profil Murid RPL
+<br>
+Dibuat oleh <b>Arcelya Syafrina</b> 💙
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const data={
+
+rpl:[
+"img/logo-rpl.png",
+"Rekayasa Perangkat Lunak",
+"RPL mempelajari tentang pembuatan, pengembangan, dan pemeliharaan perangkat lunak serta website.",
+"Pengembang perangkat lunak kompeten dan kreatif.",
+"mengembangkan kemampuan pemrograman dan teknologi perangkat lunak."
+],
+
+dkv:[
+"img/logo-dkv.png",
+"Desain Komunikasi Visual",
+"DKV mempelajari desain grafis, ilustrasi, fotografi, dan komunikasi visual.",
+"Desainer visual kreatif untuk industri kreatif.",
+"mengembangkan kemampuan desain dan komunikasi visual."
+],
+
+peksos:[
+"img/logo-peksos.png",
+"Pekerjaan Sosial",
+"Pekerjaan Sosial mempelajari pelayanan dan pekerjaan di bidang sosial.",
+"Tenaga sosial profesional yang peduli dan berempati.",
+"mengembangkan kemampuan pelayanan sosial dan kepedulian terhadap masyarakat."
+],
+
+tkj:[
+"img/logo-tkj.png",
+"Teknik Komputer dan Jaringan",
+"TKJ mempelajari komputer, jaringan, server, dan teknologi jaringan.",
+"Teknisi dan administrator jaringan yang handal.",
+"mengembangkan kemampuan instalasi dan pengelolaan jaringan."
+],
+
+animasi:[
+"img/logo-animasi.png",
+"Animasi",
+"Jurusan Animasi mempelajari pembuatan animasi 2D, 3D, karakter, dan visual.",
+"Animator kreatif dan produktif.",
+"mengembangkan kemampuan animasi dan karya visual."
+],
+
+pspt:[
+"img/logo-pspt.png",
+"Produksi Siaran Program Televisi",
+"PSPT mempelajari produksi video, penyiaran, editing, kamera, dan televisi.",
+"Insan pertelevisian profesional dan beretika.",
+"mengembangkan kemampuan produksi dan penyiaran program televisi."
+]
+
+};
+
+
+function show(id,btn){
+
+document
+.querySelectorAll(".tabs button")
+.forEach(x=>x.classList.remove("active"));
+
+btn.classList.add("active");
+
+let x=data[id];
+
+document.getElementById("box").innerHTML=`
+
+<div class="jicon">
+
+<img
+src="${x[0]}"
+alt="${x[1]}">
+
+</div>
+
+<h3>${x[1]}</h3>
+
+<p>${x[2]}</p>
+
+<div class="vm">
+
+<h4>🌟 Visi</h4>
+
+<p>
+${x[3]}
+</p>
+
+<h4>🎯 Misi</h4>
+
+<p>
+${x[4]}
+</p>
+
+</div>
+
+`;
+
+}
+
+
+/* Tampilkan RPL saat pertama dibuka */
+
+show(
+"rpl",
+document.querySelector(".tabs button")
+);
+
+</script>
+
+</body>
+</html>
